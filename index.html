@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="jquery/jquery.dataTables.min.css">
+	<!-- <link rel="stylesheet" href="printarea/jquery.printarea.css"> -->
+	<title>AUTO-PRINT</title>
+
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="" class="navbar-brand">
+					<!-- <img src="img/company-logo.png" alt="" class="" height="100%;" width="120px;"> -->
+					GENERATE ID
+				</a>  
+			</div>    
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">    
+			 	<ul class="nav navbar-nav navbar-right">
+                    <li id="input_file">
+                    	<a 	href="#"><input type="file" id="fileUpload" /></a>
+                    </li>
+                    <li id="import">
+                    	<a  href="#import"><span class="glyphicon glyphicon-import"></span> Import</a>
+                    </li>
+                    <li id="print_all">
+                    	<a  href="#print_all" onclick="print_all();"><span class="glyphicon glyphicon-print"></span> Print</a>
+                    </li>
+                    <li id="refresh">
+                    	<a  href=""><span class="glyphicon glyphicon-refresh"></span> Refresh</a>
+                    </li>
+                </ul> 
+            </div>
+		</div>
+	</nav>
+	<br />
+	<div class="container-fluid tm-50" id="container">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							List of Employees
+						</h3>
+					</div>
+					<div class="panel-body" id="employee_table">
+						
+					</div>
+				</div>
+			</div>
+			<div class="col-md-7">
+				<div class="panel panel-success" style="background-color: #afadad">
+					<div class="panel-heading">
+						<h3 class="panel-title">Print Preview
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div id="print_area">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="jquery/jquery.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="jquery/jquery.dataTables.min.js"></script> 
+	<script src="js/custom.js"></script>
+	<script src="jsbarcode/JsBarcode.all.min.js"></script>]
+
+</body>
+</html>

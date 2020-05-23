@@ -13,11 +13,26 @@
     width: 90px;
 }
 .id-head {
-	color: #fff !important;
-	background-color: #14419E !important;
-	border:1px solid #000 !important;
-	box-shadow: 2px 8px 13px 0px #636161;
+    background-color: #14419E !important;
+    border-bottom: 1px solid #535356;
+    box-shadow: 0px 3px 6px 0px #636161;
+	font-family: Verdana !important;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
+
+.id-head > p.head-title {
+    font-size: 18px !important;
+    font-weight: 550;
+    margin: 0px !important;
+
+}
+.id-head > p.head-subtitle {
+	margin: 0px !important;
+	font-size: 15px !important;
+
+}
+
 .y-bar {
 	color: #000;
 	margin: 25px 5px -5px 5px;
@@ -28,24 +43,14 @@
 	padding: 8px 0;
 }
 
-.tm-10{
-	margin-top: 10px;
-}
-.tm-25 {
-	margin-top: 25px;
-}
-.tm-50 {
-	margin-top: 50px
-}
-.tm-65 {
-	margin-top: 65px
-}
-.bm {
-	margin-bottom: 10px;
-}
-.bm-40 {
-	margin-bottom: 40px;
-}
+.tm-10{margin-top: 10px}
+.tm-25 {margin-top: 25px}
+.tm-30 {margin-top: 30px}
+.tm-40 {margin-top: 40px}
+.tm-50 {margin-top: 50px}
+.tm-65 {margin-top: 65px}
+.bm {margin-bottom: 10px}
+.bm-40 {margin-bottom: 40px;}
 
 .form-control {
 	border: none;
@@ -84,6 +89,25 @@ input.id-pic {
 	color: #fff;
 }
 
+img#esig {
+	width: 25%;
+}
+
+.image-stack::after {
+  content: ' ';
+  display: table;
+  clear: both;
+}
+
+.image-stack__item--top {
+    /*float: left;
+    width: 66%;
+    margin-right: -100%;
+    padding-top: 15%; 
+    position: relative;*/
+    z-index: 1;
+}
+
 @media print {
 	body {
 		-webkit-print-color-adjust: exact !important; 
@@ -105,5 +129,4 @@ input.id-pic {
 	}
 
 }
-
 

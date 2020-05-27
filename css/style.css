@@ -39,9 +39,10 @@
 	background-color: #EEE312 !important;
 	box-shadow: -2px 1px 5px 0px #5f5d5d;
 }
-.y-bar-title {
+.y-bar .y-bar-title {
 	padding: 8px 0;
 }
+ 
 
 .tm-10{margin-top: 10px}
 .tm-25 {margin-top: 25px}
@@ -90,7 +91,7 @@ input.id-pic {
 }
 
 img#esig {
-	width: 25%;
+	width: 22%;
 }
 
 .image-stack::after {
@@ -107,6 +108,38 @@ img#esig {
     position: relative;*/
     z-index: 1;
 }
+
+form.id-form .row-idpb {
+	margin-top: 25px;
+	margin-left: 15px;
+	margin-right: 15px;
+}  
+
+form.id-form .row-idpb .col-idp {
+	cursor: pointer;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+form.id-form .row-idpb .col-idp img  {
+	width: 100%;
+}
+
+form.id-form .row-idi h3.position {
+	margin-top:16px;
+	color: #000; 
+	font-weight: 600
+}
+
+div#container {
+	transform: scale(0.8);
+    transform-origin: top; /*(0,0)*/
+}
+
+h3.panel-title {
+	font-weight: 600;
+}
+
 
 @media print {
 	body {
@@ -126,6 +159,11 @@ img#esig {
 	}
 	.y-bar-title,.id-head {
 		box-shadow: -2px 1px 5px 0px #5f5d5d !important;
+	}
+
+	.tm-25 .border img.profile {
+		/*width: 150px;*/
+
 	}
 
 }

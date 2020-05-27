@@ -25,6 +25,7 @@ $("#import").bind("click", function () {
 				table_data += '<th>Employees</th>';
 				table_data += '<th>Position</th>';
 				table_data += '<th>Employee Barcode</th>';
+				table_data += '<th>Status</th>';
 				table_data += '</tr>';
 				table_data += '</thead>';
 				table_data += '<tbody>';
@@ -32,10 +33,15 @@ $("#import").bind("click", function () {
 				for (var i = 1; i < rows.length -1; i++) {
 					// var cells = rows[i].split(',');
 					var cells = rows[i].split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/g);
-					// cells.replace(/\"/g,'')
 					table_data += '<tr>';
-					for (var j = 0; j < 3; j++) { // cells.length
+					for (var j = 0; j < 4; j++) { // cells.length
 						if (i > 0) {
+							// let status = cells[j];
+							// $.each([ status ], function( index, value ) {
+							//   if (index %4 === 0) {
+							// 	console.log(value);
+							//   }
+							// });
 							table_data += '<td>' +  cells[j] + '</td>';
 						} else {
 
@@ -68,51 +74,48 @@ function loadPreviewPrint(table) {
 		let names2= names1.replace(/\�/g, 'ñ');
 		let position = `${value[1]}`;
 		let empid = `${value[2]}`;
-		$('#print_area').append(
-			'<div class="col-xs-6 col-id">' +
-				'<div class="panel panel-default border-3 text-center panel-id ">' +
-					'<div class="tm-10 bm-10">' +
-						'<img src="img/msi.png" class="id-logo" />' +
-						'<img src="img/cs.png" 	class="id-logo" />' +
-						'<img src="img/up.png" 	class="id-logo" />' +
-					'</div>' +
-					// '<div class="panel-heading id-head">' +
-					// 	// '<h4 class=" text-white">MARINE SCIENCE INSTITUTE</h4>' + 
-					// 	// '<h5 class=" text-white">COLLEGE OF SCIENCE</h5>' + 
-					// 	// '<h6 class=" text-white">UNIVERSITY OF THE PHILIPPINES DILIMAN</h6>' +
-					// 	'<h3 class="head-title">MARINE SCIENCE INSTITUTE</h3>' + 
-					// 	// '<p class="text-white"></p>' + 
-					// '</div>' +
-
-					'<div class="id-head">' + '<p class="head-title text-white">MARINE SCIENCE INSTITUTE</p><p class="head-subtitle text-white">COLLEGE OF SCIENCE<br> UNIVERSITY OF THE PHILIPPINES</p>' + '</div>' +
-					'<div class="panel-content p-all-10" id="haha-asd">' +
-						'<form>' +
-							'<div class="row tm-25">' +
-								'<div class="col-xs-5 border" style="cursor:pointer"><img src="img/admin.jpg" id="'+ 'img_'+ empid + '" width="120" height="120" onclick="loadProfile('+"'"+empid+"'"+');" style="border: 1px solid #ccc;" alt="" /></div>' +
-								'<div class="col-xs-7" style="padding-left:0px;"><img id="barcode'+ empid +'" /></div>' +
-								'<input class="id-pic" type="file" id="'+ empid +'" onChange="readURL(this, '+"'"+empid+"'"+');">' +
-								'<script>JsBarcode("#barcode'+ empid +'", "'+ empid +'", {format:"CODE128",displayValue:true,fontSize:16,fontOptions: "bold",width: 1.1, height: 50, marginTop: 10,marginBottom: 5,marginLeft: 0,marginRight: 5});</script>' +	
-							'</div>' +
-							'<div class="row">' +
-								'<div class="y-bar"><h3 class="y-bar-title">' + names2 + '</h3></div>' +
-								'<h3 style="margin-top:16px">' + position + '</h3>' +
-								'<div class="form-group tm-30">' +
-									'<div class="image-stack">' +
-    									'<div class="image-stack__item image-stack__item--top">' +
-											'<img src="img/ltd_esig.png" id="esig" alt="" />' +
+		let print_status = `${value[3]}`;
+		if (print_status == 'C') {
+		} else {
+			$('#print_area').append(
+				'<div class="col-xs-6 col-id">' +
+					'<div class="panel panel-default border-3 text-center panel-id ">' +
+						'<div class="tm-10 bm-10">' +
+							'<img src="img/msi.png" class="id-logo" />' +
+							'<img src="img/cs.png" 	class="id-logo" />' +
+							'<img src="img/up.png" 	class="id-logo" />' +
+						'</div>' +
+						'<div class="id-head">' + '<p class="head-title text-white">MARINE SCIENCE INSTITUTE</p><p class="head-subtitle text-white">COLLEGE OF SCIENCE<br> UNIVERSITY OF THE PHILIPPINES</p>' + '</div>' +
+						'<div class="panel-content p-all-10">' +
+							'<form class="id-form">' + 
+								'<div class="row row-idpb">' +
+									'<div class="col-xs-4 col-idp">' +
+										'<img class="profile" src="img/admin.jpg" id="'+ 'img_'+ empid + '" onclick="loadProfile('+"'"+empid+"'"+');" /></div>' +
+									'<div class="col-xs-8" style="padding-left:0px;"><img id="barcode'+ empid +'" /></div>' +
+									'<input class="id-pic" type="file" id="'+ empid +'" onChange="readURL(this, '+"'"+empid+"'"+');">' +
+									'<script>JsBarcode("#barcode'+ empid +'", "'+ empid +'", {format:"CODE128",displayValue:true,fontSize:17,fontOptions: "bold",width: 1.4, height: 75, marginTop: 15,marginBottom: 5,marginLeft: 0,marginRight: 0});</script>' +	
+								'</div>' +
+								'<div class="row row-idi">' +
+									'<div class="y-bar"><h3 class="y-bar-title">' + names2 + '</h3></div>' +
+									'<h3 class="position">' + position + '</h3>' +
+									'<div class="form-group tm-30">' +
+										'<div class="image-stack">' +
+	    									'<div class="image-stack__item image-stack__item--top">' +
+												'<img src="img/ltd_esig.png" id="esig" alt="" />' +
+											'</div>' +
 										'</div>' +
-									'</div>' +
-									'<h4 style="margin-top: -27px;"> DR. LAURA T. DAVID <br />' +
-										'<small>DIRECTOR <br />' + 
-									'Authorized Signature</small></h4>' + 
-								'</div>' + 
-							'</div>' +
-						'</form>' +
+										'<h4 style="margin-top: -27px;"> DR. LAURA T. DAVID <br />' +
+											'<small>DIRECTOR <br />' + 
+										'Authorized Signature</small></h4>' + 
+									'</div>' + 
+								'</div>' +
+							'</form>' +
+						'</div>' +
 					'</div>' +
 				'</div>' +
-			'</div>' +
-			'<p class="newpage"></p>'
-		);
+				'<p class="newpage"></p>'
+			);
+		}
 	});
 	$('p.newpage:nth-child(' + (3) + 'n)').after('<p style="page-break-after:always !important;"></p>');
 

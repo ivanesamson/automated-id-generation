@@ -98,15 +98,15 @@ function loadPreviewPrint(table) {
 								'<div class="row row-idi">' +
 									'<div class="y-bar"><h3 class="y-bar-title">' + names2 + '</h3></div>' +
 									'<h3 class="position">' + position + '</h3>' +
-									'<div class="form-group tm-30">' +
+									'<div class="form-group tm-25">' +
 										'<div class="image-stack">' +
 	    									'<div class="image-stack__item image-stack__item--top">' +
 												'<img src="img/ltd_esig.png" id="esig" alt="" />' +
 											'</div>' +
 										'</div>' +
-										'<h4 style="margin-top: -27px;"> DR. LAURA T. DAVID <br />' +
-											'<small>DIRECTOR <br />' + 
-										'Authorized Signature</small></h4>' + 
+										'<h4 class="director"> DR. LAURA T. DAVID <br />' +
+											'<small style="color: #000">DIRECTOR <br />' + 
+											'Authorized Signature</small></h4>' + 
 									'</div>' + 
 								'</div>' +
 							'</form>' +

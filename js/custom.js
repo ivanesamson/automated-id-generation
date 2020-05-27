@@ -89,10 +89,10 @@ function loadPreviewPrint(table) {
 						'<div class="panel-content p-all-10">' +
 							'<form class="id-form">' + 
 								'<div class="row row-idpb">' +
-									'<div class="col-xs-4 col-idp">' +
+									'<div class="col-xs-5 col-idp">' +
 										'<img class="profile" src="img/admin.jpg" id="'+ 'img_'+ empid + '" onclick="loadProfile('+"'"+empid+"'"+');" /></div>' +
-									'<div class="col-xs-8" style="padding-left:0px;"><img id="barcode'+ empid +'" /></div>' +
-									'<input class="id-pic" type="file" id="'+ empid +'" onChange="readURL(this, '+"'"+empid+"'"+');">' +
+									'<div class="col-xs-7" style="padding-left:0px;"><img id="barcode'+ empid +'" /></div>' +
+									'<input class="id-pic" type="file" accept="image/x-png,image/jpeg" id="'+ empid +'" onChange="readURL(this, '+"'"+empid+"'"+');">' +
 									'<script>JsBarcode("#barcode'+ empid +'", "'+ empid +'", {format:"CODE128",displayValue:true,fontSize:17,fontOptions: "bold",width: 1.4, height: 75, marginTop: 15,marginBottom: 5,marginLeft: 0,marginRight: 0});</script>' +	
 								'</div>' +
 								'<div class="row row-idi">' +

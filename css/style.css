@@ -122,7 +122,9 @@ form.id-form .row-idpb .col-idp {
 }
 
 form.id-form .row-idpb .col-idp img  {
-	width: 100%;
+	/*width: 100%;*/
+	width: 150px;
+	height: 150px;
 }
 
 form.id-form .row-idi h3.position {
@@ -132,7 +134,7 @@ form.id-form .row-idi h3.position {
 }
 
 div#container {
-	transform: scale(0.8);
+	transform: scale(0.65);
     transform-origin: top; /*(0,0)*/
 }
 

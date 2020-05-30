@@ -33,6 +33,8 @@ $(document).ready( function () {
 		$('.directorName').text($('#selectedDirector').val());
 		$('.directorName').text($('#selectedDirector').val());
 		$('.directorPosition').text($('#selectedPosition').val());
+		$('.authorizeSig').text(auth_Signature);
+
 	});
 
 });

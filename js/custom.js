@@ -10,14 +10,14 @@ $(document).ready( function () {
 			selectedBranch = $("#selectBranch option:selected").html();
 			$('#selectedDirector').val('DR. LAURA T. DAVID');
 			$('#selectedPosition').val('DIRECTOR');
-			$('#selectedEsig').val('img/ltd_esig.png');
+			$('#selectedEsig').val('img/ltd_esig1.png');
 			auth_Signature = 'Authorized Signature';
 			
 		} else if(selected == 2) {
 			selectedBranch = $("#selectBranch option:selected").html();
 			$('#selectedDirector').val('DR. MA. JOSEFA R. PANTE');
 			$('#selectedPosition').val('DEPUTY DIRECTOR FOR BML');
-			$('#selectedEsig').val('img/ltd_esig.png');
+			$('#selectedEsig').val('img/ltd_esig2.png');
 			auth_Signature = 'Authorized Signature';
 		} else {
 			selectedBranch = $('').html();

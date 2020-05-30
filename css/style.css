@@ -53,11 +53,11 @@
 .bm {margin-bottom: 10px}
 .bm-40 {margin-bottom: 40px;}
 
-.form-control {
+/*.form-control {
 	border: none;
 	border-bottom: 1px solid #464545;
 	border-radius: 0px;
-}
+}*/
 
 .p-all-10 {
 	padding: 10px;
@@ -146,8 +146,12 @@ h3.panel-title {
 h4.director {
 	margin-top: -27px; color: #000;
 }
-h4.director small {
+h4#director small {
 	color: #000;
+}
+.p-lr-5 {
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 

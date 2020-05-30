@@ -1,8 +1,39 @@
 $(document).ready( function () {
-	var table, fileUrl;	
+	var table, fileUrl, selectedBranch, auth_Signature;	
 	$('#container').hide();	
 	$('#print_all').hide();
 	$('#refresh').hide();
+
+	$('#selectBranch').change(function() {
+		var selected = $(this).val();
+		if (selected == 1) {
+			selectedBranch = $("#selectBranch option:selected").html();
+			$('#selectedDirector').val('DR. LAURA T. DAVID');
+			$('#selectedPosition').val('DIRECTOR');
+			$('#selectedEsig').val('img/ltd_esig.png');
+			auth_Signature = 'Authorized Signature';
+			
+		} else if(selected == 2) {
+			selectedBranch = $("#selectBranch option:selected").html();
+			$('#selectedDirector').val('DR. MA. JOSEFA R. PANTE');
+			$('#selectedPosition').val('DEPUTY DIRECTOR FOR BML');
+			$('#selectedEsig').val('img/ltd_esig.png');
+			auth_Signature = 'Authorized Signature';
+		} else {
+			selectedBranch = $('').html();
+			$('#selectedDirector').val('');
+			$('#selectedPosition').val('');
+			$('#selectedEsig').val('');
+		}
+	});
+
+	$('#btnApplyChanges').click(function () {
+		$('.head-title').text(selectedBranch);
+		$('.esig').attr('src', $('#selectedEsig').val());
+		$('.directorName').text($('#selectedDirector').val());
+		$('.directorName').text($('#selectedDirector').val());
+		$('.directorPosition').text($('#selectedPosition').val());
+	});
 
 });
 
@@ -85,7 +116,7 @@ function loadPreviewPrint(table) {
 							'<img src="img/cs.png" 	class="id-logo" />' +
 							'<img src="img/up.png" 	class="id-logo" />' +
 						'</div>' +
-						'<div class="id-head">' + '<p class="head-title text-white">MARINE SCIENCE INSTITUTE</p><p class="head-subtitle text-white">COLLEGE OF SCIENCE<br> UNIVERSITY OF THE PHILIPPINES</p>' + '</div>' +
+						'<div class="id-head">' + '<p class="head-title text-white"></p><p class="head-subtitle text-white">COLLEGE OF SCIENCE<br> UNIVERSITY OF THE PHILIPPINES</p>' + '</div>' +
 						'<div class="panel-content p-all-10">' +
 							'<form class="id-form">' + 
 								'<div class="row row-idpb">' +
@@ -101,12 +132,14 @@ function loadPreviewPrint(table) {
 									'<div class="form-group tm-25">' +
 										'<div class="image-stack">' +
 	    									'<div class="image-stack__item image-stack__item--top">' +
-												'<img src="img/ltd_esig.png" id="esig" alt="" />' +
+												// '<img src="img/ltd_esig.png" id="esig" class="esig" alt="" />' +
+												'<img src="" id="esig" class="esig" alt="" />' +
 											'</div>' +
 										'</div>' +
-										'<h4 class="director"> DR. LAURA T. DAVID <br />' +
-											'<small style="color: #000">DIRECTOR <br />' + 
-											'Authorized Signature</small></h4>' + 
+										'<h4 class="director"><span class="directorName"></span><br />' +
+											'<small><span class="directorPosition"></span> <br />' + 
+											'<span class="authorizeSig"></span></small>' +
+										'</h4>' + 
 									'</div>' + 
 								'</div>' +
 							'</form>' +

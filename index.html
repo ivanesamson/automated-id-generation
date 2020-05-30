@@ -52,7 +52,8 @@
 					<div class="panel-heading">
 						<h3 class="panel-title">
 							GENERATED ID'S
-							<a href="#myModal" data-toggle="modal" class="pull-right"><i class="glyphicon glyphicon-search"></i> List of employee</a>
+							<a href="#modalListEmployee" data-toggle="modal" class="pull-right p-lr-5"><i class="glyphicon glyphicon-search"></i> List of employee</a>
+							<a href="#modalCustomize" data-toggle="modal" class="pull-right p-lr-5"><i class="glyphicon glyphicon-pencil"></i> Customize</a>
 						</h3>
 					</div>
 					<div class="panel-body">
@@ -64,7 +65,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="modal fade" id="myModal">
+	<div class="modal fade" id="modalListEmployee">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -84,6 +85,35 @@
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
+	</div><div class="modal fade" id="modalListEmployee">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">List of Employee</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-success">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										List of Employees
+									</h3>
+								</div>
+								<div class="panel-body" id="employee_table">
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -92,6 +122,59 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="modal fade" id="modalCustomize">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Customize Content</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-7">
+							<div class="panel">
+								<div class="panel-content">
+									<form>
+										<div class="form-group">
+											<label for="">Branch:</label>
+											<select class="form-control" id="selectBranch">
+												<option></option>
+												<option value="1">MARINE SCIENCE INSTITUTE</option>	
+												<option value="2">BOLINAO MARINE LABORATORY</option>	
+											</select>
+										</div>
+										<div class="form-group">
+											<label>Director:</label>
+											<input class="form-control" id="selectedDirector" type="text" disabled>
+										</div>
+										<div class="form-group">
+											<label>Position:</label>
+											<input class="form-control" id="selectedPosition" type="text" disabled>
+										</div>
+										<div class="form-group hidden">
+											<input type="text" id="selectedEsig" disabled>
+										</div>
+										<!-- <div class="form-group">
+											<label for="exampleInputFile">Choose Signature</label>
+											<input type="file" id="exampleInputFile">
+											<p class="help-block text-danger" id="fileMsg"></p>
+										</div> -->
+										<!-- <button type="submit" class="btn btn-default">Apply</button> -->
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal" id="btnApplyChanges">Apply</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 	<script src="jquery/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
